@@ -15,8 +15,8 @@ API_ID = environ.get('API_ID')
 API_HASH = environ.get('API_HASH')
 BOT_TOKEN = environ.get('BOT_TOKEN')
 API_KEY = environ.get('API_KEY')
-CHANNEL = environ.get('CHANNEL')
-HOWTO = environ.get('HOWTO')
+CHANNEL = environ.get('CHANNEL',"@Umlinks")
+HOWTO = environ.get('HOWTO',"https://droplink.co/api")
 
 bot = Client('Droplink bot', 
              api_id=API_ID, 
