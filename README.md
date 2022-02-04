@@ -15,7 +15,7 @@ Make short link by using [Shortzon](https://shortzon.com/ref/Selfiebd) API key. 
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://t.me/BotFather), and get the Telegram API token.
 * `API_ID`: Get this value from [my.telegram.org](https://my.telegram.org/apps).
 * `API_HASH`: Get this value from [my.telegram.org](https://my.telegram.org/apps).
-* `API_KEY`: Create [Droplink](https://shortzon.com/ref/Selfiebd) account then get this value from [Droplink API](https://shortzon.com/ref/Selfiebd).
+* `API_KEY`: Create [Shortzon](https://shortzon.com/ref/Selfiebd) account then get this value from [Shortzon API](https://shortzon.com/ref/Selfiebd).
 
 ### How to Use?
 
