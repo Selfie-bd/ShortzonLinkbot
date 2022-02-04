@@ -27,7 +27,7 @@ async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
         short_link = await get_shortlink(link)
-        await message.reply(f'❗ Here is your [`{short_link}`]({short_link}) \n\n 👁️‍🗨️ Powered by @GroupDcBots', quote=True)
+        await message.reply(f'❗ Here is your [`{short_link}`]({short_link}) \n\n 〽️ Powered by @GroupDcBots', quote=True)
     except Exception as e:
         await message.reply(f'Error: {e}', quote=True)
 
