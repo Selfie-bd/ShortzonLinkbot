@@ -21,7 +21,7 @@ from pyrogram import Client, filters
 API_ID = environ.get('API_ID')
 API_HASH = environ.get('API_HASH')
 BOT_TOKEN = environ.get('BOT_TOKEN')
-API_KEY = environ.get('API_KEY', 'e3eddb3e7c5513eee187120fce788ddc4a1a643b')
+API_KEY = environ.get('API_KEY', '')
 
 bot = Client('droplink bot',
              api_id=API_ID,
@@ -45,7 +45,7 @@ async def link_handler(bot, message):
     for num in range(len(links)):
       try:
         short_link = await get_shortlink(links[num])
-        await message.reply(f'**➕ Long URL:** {links[num]}\n**❗ Shortened URL:** {short_link}\n\n@GroupDcBots', quote=True, disable_web_page_preview=True)
+        await message.reply(f'**❕Long URL :** {links[num]}\n**❗Shortened URL :** {short_link} \n\n👁️‍🗨️ Powered by @GroupDcBots', quote=True, disable_web_page_preview=True)
       except Exception as e:
         await message.reply(f'Error: {e}', quote=True)
 
