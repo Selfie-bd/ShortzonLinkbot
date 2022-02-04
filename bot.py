@@ -47,5 +47,57 @@ async def get_shortlink(link):
             data = await response.json()
             return data["shortenedUrl"]
 
+@Client.on_message(filters.private & filters.command("add"))
+async def addApiHandler(bot:Update, msg:Message):
+    if await search_user_in_community(bot, msg):
+        splitMessage = msg.text.split(' ')
+        if len(splitMessage) == 2:
+            userid = msg.chat.id
+            if not apiExist(userid):
+                apiKey = splitMessage[1]
+                if await isApiValid(apiKey, bot, msg):
+                    addApiKey(apiKey, userid)
+                    await msg.reply_text(
+                        "<b>Your API Key has been added successfully🥳🥳.</b>",
+                        parse_mode = "html"
+                    )
+            else:
+                await msg.reply_text(
+                    "<b>Your API Key is already added🤪.</b>",
+                    parse_mode = "html"
+                )
+        else:
+            await msg.reply_text(
+                "<b>Invalid Command⛔\nSend API Key like this <code>/add APIKEY</code>\n\nIf facing any problem🥲 then ask at😊 @AJPyroVerseGroup</b>",
+                parse_mode = "html"
+            )
+    return
+
+fileName = 'broadcast'
+
+@Client.on_message(filters.private & filters.command("broadcast"))
+async def broadcast_handler(bot:Update, msg:Message):
+    try:
+        #Extracting Broadcasting Message
+        message = msg.text.split('/broadcast ')[1]
+    except IndexError:
+        await msg.reply_text(
+            "<b>Broadcast can't be empty.😒</b>",
+            parse_mode = 'html'
+        )
+    except Exception as e:
+        await bot.send_message(Config.OWNER_ID, line_number(fileName, e))
+    else:
+        #Getting User`s Id from Database
+        for userid in [document['userid'] for document in collection_api_key.find()]:
+            try:
+                #Sending Message One By One
+                await bot.send_message(userid, message)
+            except exceptions.bad_request_400.UserIsBlocked:
+                #User Blocked the bot
+                pass
+            except Exception as e:
+                await bot.send_message(Config.OWNER_ID, line_number(fileName, e))
+    return
 
 bot.run()
