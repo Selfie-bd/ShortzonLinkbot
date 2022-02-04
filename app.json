@@ -1,12 +1,12 @@
 {
-    "name": "Droplink Bot",
-    "description": "Make short link by using Droplink API key",
+    "name": "Shortzon Link Shortly Bot",
+    "description": "Make short link by using Shortzon API key",
     "keywords": [
         "telegram",
-        "Droplink"
+        "Shortzon"
     ],
-    "website": "https://github.com/ToonsHub/Droplink-bot",
-    "repository": "https://github.com/ToonsHub/Droplink-bot",
+    "website": "https://github.com/selfie-bd/ShortzonLinkbot",
+    "repository": "https://github.com/selfie-bd/ShortzonLinkbot",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token",
@@ -21,7 +21,7 @@
             "value": ""
         },
         "API_KEY": {
-            "description": "Get API key from https://droplink.co/member/tools/api",
+            "description": "Get API key from https://shortzon.com/member/tools/api",
             "required": false
         }
     },
