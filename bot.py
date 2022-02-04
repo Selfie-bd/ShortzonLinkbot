@@ -21,7 +21,7 @@ from pyrogram import Client, filters
 API_ID = environ.get('API_ID')
 API_HASH = environ.get('API_HASH')
 BOT_TOKEN = environ.get('BOT_TOKEN')
-API_KEY = environ.get('API_KEY', '')
+API_KEY = environ.get('API_KEY', '3e9328a5bfde21e60ed3681062621bad6d7a8003')
 
 bot = Client('droplink bot',
              api_id=API_ID,
