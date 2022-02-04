@@ -23,7 +23,8 @@ async def start(bot, message):
 
 @bot.on_message(filters.command('help') & filters.private)
 async def start(bot, message):
-      await message.reply("**HeLlo Everyone. Send Your Link 1st❕ I Will Send Short Link 👍 \n\n🔰 ʙᴏᴛ ʟɪꜱᴛ 🔰  \n✅ ☞ ᴍᴏᴠɪᴇ ꜱᴇᴀʀᴄʜ ʙᴏᴛ ⭐ ☞ @MediaautoSearchbot \n✅ ☞ ᴅʀᴏᴘʟɪɴᴋ ꜱʜᴏʀᴛ ☞ @Droplinkdcbot ɪɴᴜᴘᴅᴀᴛᴇ \n✅ ☞ Group Manager Bot ☞ @GroupManagerDcBot \n✅ ☞ File 2 Link Bot ☞ @Dcstreamsbot \n✅ ☞ Video Merge Bot ☞ @VideoMergeDcBot \n\n 👁️‍🗨️ Powered by @GroupDcBots")
+      await message.reply(
+          f"**HeLlo Everyone. Send Your Link 1st❕ I Will Send Short Link 👍 \n\n🔰 ʙᴏᴛ ʟɪꜱᴛ 🔰  \n✅ ☞ ᴍᴏᴠɪᴇ ꜱᴇᴀʀᴄʜ ʙᴏᴛ ⭐ ☞ @MediaautoSearchbot \n✅ ☞ ᴅʀᴏᴘʟɪɴᴋ ꜱʜᴏʀᴛ ☞ @Droplinkdcbot ɪɴᴜᴘᴅᴀᴛᴇ \n✅ ☞ Group Manager Bot ☞ @GroupManagerDcBot \n✅ ☞ File 2 Link Bot ☞ @Dcstreamsbot \n✅ ☞ Video Merge Bot ☞ @VideoMergeDcBot \n\n 👁️‍🗨️ Powered by @GroupDcBots")
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
