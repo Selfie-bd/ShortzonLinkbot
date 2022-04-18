@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 API_ID = environ.get('API_ID')
 API_HASH = environ.get('API_HASH')
 BOT_TOKEN = environ.get('BOT_TOKEN')
-API_KEY = environ.get('API_KEY', '3e9328a5bfde21e60ed3681062621bad6d7a8003')
+API_KEY = environ.get('API_KEY', '478179da2efba73db9b2b56171d6a263adeb239d')
 
 bot = Client('Shortzon Link Shortly Bot',
              api_id=API_ID,
@@ -37,7 +37,7 @@ async def link_handler(bot, message):
 
 
 async def get_shortlink(link):
-    url = 'https://shortzon.com/api'
+    url = 'https://tnlinks.in/member/tools/api'
     params = {'api': API_KEY, 'url': link}
 
     async with aiohttp.ClientSession() as session:
